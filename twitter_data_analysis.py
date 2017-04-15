@@ -1,6 +1,6 @@
-import tweepy
+# import tweepy
 import json
-from tweepy import OAuthHandler, API			#import handler
+from tweepy import OAuthHandler, Stream, API			#import handler
 from tweepy.streaming import StreamListener		#import a class
 
 consumer_key = 'whndeJiLln26BoRNeavlLSPoF'
@@ -34,7 +34,7 @@ class PrintListener(StreamListener):
 
 def print_to_terminal():
 	listener = PrintListener()
-	stream = tweepy.Stream(auth, listener)
+	stream = Stream(auth, listener)
 	languages = ('en',)
 	stream.sample(languages=languages)
 	# stream.sample()
